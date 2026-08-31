@@ -1,0 +1,78 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+@font-face {
+    font-family: Transcity ;
+    src: url(./assets/Fonts/Transcity\ DEMO.otf);
+}
+
+@font-face {
+    font-family: Instrument-Serif;
+    src: url(./assets/Fonts/InstrumentSerif-Regular.ttf);
+}
+
+.main-container {
+    display: flex;
+}
+
+.side-bar {
+    background-color: black;
+    color: white;
+    min-height: 100vh;
+    flex-basis: 300px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.logo {
+    text-align: center;
+    font-size: 3.5rem;
+    font-family: Transcity;
+    margin-bottom: 50px;
+}
+
+.list-items{
+    line-height: 50px;
+    list-style: none;
+}
+
+.list-item {
+    padding-left: 20px;
+    transition: background-color 0.3s ease;
+    transition: font-weight 0.1s ease;
+}
+
+.list-item:hover,
+.list-item.active{
+    background-color: white;
+    color: black;
+    font-weight: 600;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+
+.project-button {
+    margin-top: auto ;
+    max-width: 180px;
+    min-height: 35px;
+    margin-left: 20%;
+    border-radius: 5px;
+    background-color: rgb(255, 255, 255);
+    font-weight: 600;
+    font-size: 1rem;
+    border: 2px solid black;
+    transition: 0.1s ease;
+    margin-bottom: 50px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.project-button:hover {
+    box-shadow: rgba(255, 255, 255, 0.25) 0px 13px 27px -5px, rgba(255, 255, 255, 0.3) 0px 8px 16px -8px;
+    border: rgb(144, 145, 152);
+    transition: 0.4s ease;
+}
