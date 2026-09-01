@@ -129,7 +129,6 @@
 }
 
 .project-section {
-    border: 2px solid red;
     flex-basis: 77.3vh;
     display: flex;
     padding: 20px;
@@ -138,8 +137,8 @@
 
 .project-card {
     border: 1px solid black;
-    max-width: 400px;
-    flex-basis: 350px;
+    max-width: 450px;
+    flex-basis: 430px;
     min-height: 19vh;
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
@@ -167,6 +166,7 @@
 .project-header {
     display: flex;
     gap: 6px;
+    flex-wrap: wrap;
 }
 
 .project-title {
@@ -210,10 +210,37 @@
 }
 
 .to-do {
-    border: 2px solid darkorange;
     min-height: 30px;
-
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid black;
 }
+
+
+
+.toDoDesc {
+    font-size: 0.9rem;
+}
+
+.toDoPriority,
+.toDoDueDate {
+    font-size: 0.8rem;
+}
+
+.low-priority {
+    color: green;
+}
+
+.high-priority {
+    color: rgb(176, 4, 4);
+}
+
+.medium-priority {
+    color: darkorange;
+}
+
 
 
 
