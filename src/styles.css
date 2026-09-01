@@ -23,10 +23,11 @@
     background-color: black;
     color: white;
     min-height: 100vh;
-    flex-basis: 300px;
+    flex-basis: 450px;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
+    border-top-right-radius: 10px;
 }
 
 .logo {
@@ -34,6 +35,7 @@
     font-size: 3.5rem;
     font-family: Transcity;
     margin-bottom: 50px;
+    margin-top: 20px;
 }
 
 .list-items{
@@ -43,7 +45,7 @@
 
 .list-item {
     padding-left: 20px;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.1s ease;
     transition: font-weight 0.1s ease;
 }
 
@@ -60,7 +62,7 @@
     margin-top: auto ;
     max-width: 180px;
     min-height: 35px;
-    margin-left: 20%;
+    margin-left: 26%;
     border-radius: 5px;
     background-color: rgb(255, 255, 255);
     font-weight: 600;
@@ -75,4 +77,49 @@
     box-shadow: rgba(255, 255, 255, 0.25) 0px 13px 27px -5px, rgba(255, 255, 255, 0.3) 0px 8px 16px -8px;
     border: rgb(144, 145, 152);
     transition: 0.4s ease;
+}
+
+.content-area {
+    /* border: 3px solid red; */
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    flex-wrap: wrap;
+    background-color: white;
+}
+
+.user-name {
+    min-height: 8vh;
+    align-content: center;
+    color: grey;
+    font-size: 2rem;
+    padding-left: 10px;
+}
+
+.announcements {
+    min-height: 5vh;
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding-left: 30px;
+}
+
+.searchbar {
+    min-height: 6vh;
+    align-content: center;
+    padding-left: 30px;
+    display: flex;
+    align-items: center;
+}
+
+.searchbar input {
+    flex-basis: 700px;
+    height: 40px;
+    border-radius: 20px;
+    padding-left: 30px;
+}
+
+.title {
+    margin-left: 10px;
+    margin-top: 7px;
+    color: rgb(107, 106, 106);
 }
