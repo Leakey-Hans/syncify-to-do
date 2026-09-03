@@ -12,6 +12,8 @@ addProjectBtn.addEventListener('click', () => {
     createProjectCard();
     addProjectModal.classList.remove('project-modal-opened');
     newProjectBtn.disabled = false;
+    const modalForm = document.querySelector('.modal-form');
+    modalForm.reset();
 });
 
 function createProjectCard () {
