@@ -1,21 +1,22 @@
 //Project Addition
 const newProjectBtn = document.querySelector('.project-button');
-const projectContainer = document.querySelector('.project-section');
 const addProjectModal = document.querySelector('.project-modal');
 const addProjectBtn = document.querySelector('.add-project');
 
 newProjectBtn.addEventListener("click", () => {
     addProjectModal.classList.add('project-modal-opened');
+    newProjectBtn.disabled = true;
 });
 
 addProjectBtn.addEventListener('click', () => {
     createProjectCard();
     addProjectModal.classList.remove('project-modal-opened');
+    newProjectBtn.disabled = false;
 });
 
 function createProjectCard () {
     const projectContainer = document.querySelector('.project-section');
-    const projectName = document.querySelector('.project-name').value;
+    const projectName = document.querySelector('.project-name').value
 
     const projectCard = document.createElement('div');
     const projectHeader = document.createElement('div');
