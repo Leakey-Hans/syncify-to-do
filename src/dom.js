@@ -1,8 +1,64 @@
 //Project Addition
-
-const addProjectBtn = document.querySelector('.project-button');
+const newProjectBtn = document.querySelector('.project-button');
 const projectContainer = document.querySelector('.project-section');
+const addProjectModal = document.querySelector('.project-modal');
+const addProjectBtn = document.querySelector('.add-project');
 
-addProjectBtn.addEventListener("click", () => {
+newProjectBtn.addEventListener("click", () => {
+    addProjectModal.classList.add('project-modal-opened');
+});
+
+addProjectBtn.addEventListener('click', () => {
+    createProjectCard();
+    addProjectModal.classList.remove('project-modal-opened');
+});
+
+function createProjectCard () {
+    const projectContainer = document.querySelector('.project-section');
+    const projectName = document.querySelector('.project-name').value;
+
+    const projectCard = document.createElement('div');
+    const projectHeader = document.createElement('div');
+    const projectTitle = document.createElement('div');
+    const projectbtnAdd = document.createElement('button');
+    const projectbtndel = document.createElement('button');
+    const toDosContainer = document.createElement('div');
+    const toDoItem = document.createElement('div');
+    const toDoDescription = document.createElement('p');
+    const toDoPriority = document.createElement('div');
+    const toDoPriorityIndicator = document.createElement('span');
+    const toDoDueDate = document.createElement('div');
+    const toDoDate = document.createElement('span');
     
-})
+    projectCard.classList.add('project-card');
+    projectHeader.classList.add('project-header');
+    projectTitle.classList.add('project-title');
+    projectbtnAdd.classList.add('project-btn', 'add');
+    projectbtndel.classList.add('project-btn', 'del');
+    toDosContainer.classList.add('to-dos');
+    toDoItem.classList.add('to-do');
+    toDoDescription.classList.add('metaItem', 'toDoDesc');
+    toDoPriority.classList.add('meta-item', 'toDoPriority');
+    toDoPriorityIndicator.classList.add('span-item', 'priority');
+    toDoDueDate.classList.add('span-item', 'toDoDueDate');
+    toDoDate.classList.add('span-item', 'dueDate');
+
+    projectTitle.textContent = projectName;
+    projectbtnAdd.textContent = 'Add To-do';
+    projectbtndel.textContent = 'Delete Project';
+
+    projectContainer.appendChild(projectCard);
+    projectCard.appendChild(projectHeader);
+    projectCard.appendChild(toDosContainer);
+    projectHeader.appendChild(projectTitle);
+    projectHeader.appendChild(projectbtnAdd);
+    projectHeader.appendChild(projectbtndel);
+    toDosContainer.appendChild(toDoItem);
+    toDoItem.appendChild(toDoDescription);
+    toDoItem.appendChild(toDoPriority);
+    toDoItem.appendChild(toDoDueDate);
+    toDoPriority.appendChild(toDoPriorityIndicator);
+    toDoDueDate.appendChild(toDoDate);
+}
+
+

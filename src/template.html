@@ -19,37 +19,31 @@
         </aside>
         <div class="content-area">
             <div class="user-name">Hey Lee,</div>
-            <div class="announcements">You got 8 tasks today - to be done by JS</div>
+            <div class="announcements">You got 8 tasks today</div>
             <form action="" class="searchbar">
                 <input type="text" placeholder="Search Projects..">
             </form>
             <div class="title"><h2>Projects</h2></div>
             <div class="project-section">
-                <div class="project-card">
+                <div class="project-card" title="Project">
                     <div class="project-header">
                         <div class="project-title">Appointments</div>
                         <button type="button" class="project-btn add">Add To-do</button>
                         <button type="button" class="project-btn del">Delete Project</button>
                     </div>
                     <div class="to-dos">
-                        <div class="to-do one">
-                            <p class="meta-item toDoDesc">visit ma in hospital</p>
-                            <div class="meta-item toDoPriority">Priority: <span class="span-item priority">low</span></div>
-                            <div class="meta-item toDoDueDate">Due: <span class="span-item dueDate">dd/mm/yyyy</span></div>
-                        </div>
-                        <div class="to-do two">
-                            <p class="meta-item toDoDesc">Run Errands to Town</p>
-                            <div class="meta-item toDoPriority">Priority: <span class="span-item priority">high</span></div>
-                            <div class="meta-item toDoDueDate">Due: <span class="span-item dueDate">dd/mm/yyyy</span></div>
-                        </div>
-                        <div class="to-do last">
-                            <p class="meta-item toDoDesc">Ruto must go</p>
-                            <div class="meta-item toDoPriority">Priority: <span class="span-item priority">medium</span></div>
-                            <div class="meta-item toDoDueDate">Due: <span class="span-item dueDate">dd/mm/yyy</span></div>
+                        <div class="to-do">
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="project-modal">
+            <form action="">
+                    <div>Enter Project Title</div>
+                    <input type="text" required maxlength="20" class="project-name">
+                    <button type="button" class="add-project">Add Project</button>
+            </form>
         </div>
     </main>
 </body>
