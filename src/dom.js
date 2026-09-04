@@ -1,22 +1,38 @@
 //Project Addition
+    //Global Vars
 const newProjectBtn = document.querySelector('.project-button');
 const addProjectModal = document.querySelector('.project-modal');
 const addProjectBtn = document.querySelector('.add-project');
+const deleteProjectBtn = document.querySelector('.del');
 
-newProjectBtn.addEventListener("click", () => {
-    addProjectModal.classList.add('project-modal-opened');
-    newProjectBtn.disabled = true;
-});
+    //Stored returned object/closures
+
+const newProject = createProjectCard();
+
+    //Event Listeners
 
 addProjectBtn.addEventListener('click', () => {
-    createProjectCard();
+    newProject.add();
     addProjectModal.classList.remove('project-modal-opened');
     newProjectBtn.disabled = false;
     const modalForm = document.querySelector('.modal-form');
     modalForm.reset();
 });
 
+deleteProjectBtn.addEventListener('click', () => {
+    newProject.delete();
+});
+
+newProjectBtn.addEventListener("click", () => {
+    addProjectModal.classList.add('project-modal-opened');
+    newProjectBtn.disabled = true;
+});
+
+    //A factory Function that creates the project card with closures to interact with
+    //with the project card
+
 function createProjectCard () {
+
     const projectContainer = document.querySelector('.project-section');
     const projectName = document.querySelector('.project-name').value
 
@@ -50,18 +66,32 @@ function createProjectCard () {
     projectbtnAdd.textContent = 'Add To-do';
     projectbtndel.textContent = 'Delete Project';
 
-    projectContainer.appendChild(projectCard);
-    projectCard.appendChild(projectHeader);
-    projectCard.appendChild(toDosContainer);
-    projectHeader.appendChild(projectTitle);
-    projectHeader.appendChild(projectbtnAdd);
-    projectHeader.appendChild(projectbtndel);
-    toDosContainer.appendChild(toDoItem);
-    toDoItem.appendChild(toDoDescription);
-    toDoItem.appendChild(toDoPriority);
-    toDoItem.appendChild(toDoDueDate);
-    toDoPriority.appendChild(toDoPriorityIndicator);
-    toDoDueDate.appendChild(toDoDate);
-}
+    const appendProjectCard = () => {
+        projectContainer.appendChild(projectCard);
+        projectCard.appendChild(projectHeader);
+        projectCard.appendChild(toDosContainer);
+        projectHeader.appendChild(projectTitle);
+        projectHeader.appendChild(projectbtnAdd);
+        projectHeader.appendChild(projectbtndel);
+        toDosContainer.appendChild(toDoItem);
+        toDoItem.appendChild(toDoDescription);
+        toDoItem.appendChild(toDoPriority);
+        toDoItem.appendChild(toDoDueDate);
+        toDoPriority.appendChild(toDoPriorityIndicator);
+        toDoDueDate.appendChild(toDoDate);
+    };
+
+    const deleteProject = () => {
+        projectContainer.removeChild(projectCard);
+    };
+
+    //return Functions needed for the event listeners outside
+    return {
+        add: appendProjectCard,
+        delete: deleteProject
+    }
+};
+
+
 
 
