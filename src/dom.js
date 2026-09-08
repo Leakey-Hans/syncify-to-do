@@ -3,7 +3,6 @@
 const newProjectBtn = document.querySelector('.project-button');
 const addProjectModal = document.querySelector('.project-modal');
 const addProjectBtn = document.querySelector('.add-project');
-const deleteProjectBtn = document.querySelector('.del');
 
     //Event Listeners
 
@@ -58,6 +57,10 @@ function createProjectCard () {
     projectbtnAdd.textContent = 'Add To-do';
     projectbtndel.textContent = 'Delete Project';
 
+    projectbtndel.addEventListener('click', () => {
+        projectCard.remove();
+    });
+
     projectContainer.appendChild(projectCard);
     projectCard.appendChild(projectHeader);
     projectCard.appendChild(toDosContainer);
@@ -71,8 +74,8 @@ function createProjectCard () {
     toDoPriority.appendChild(toDoPriorityIndicator);
     toDoDueDate.appendChild(toDoDate);
 
-    deleteProjectBtn.addEventListener('click', () => {
-        projectContainer.removeChild(projectCard);
+    projectbtndel.addEventListener('click', () => {
+        projectCard.remove();
     });
 };
 
