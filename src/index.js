@@ -12,11 +12,21 @@ class toDoItem {
     createTodo () {
         const toDoItem = document.createElement('div');
         const toDoDescription = document.createElement('p');
-        toDoDescription.textContent = this.description;
         const toDoPriority = document.createElement('div');
-        const toDoPriorityIndicator = document.createElement('span');
         const toDoDueDate = document.createElement('div');
-        const toDoDate = document.createElement('span');
+
+        toDoItem.classList.add('to-do');
+        toDoDescription.classList.add('metaItem', 'toDoDesc');
+        toDoPriority.classList.add('meta-item', 'toDoPriority');
+        toDoDueDate.classList.add('span-item', 'toDoDueDate');
+
+        toDoDescription.textContent = this.description;
+        toDoPriorityIndicator.textContent = `Priority: ${this.priority}`;
+        toDoDueDate.textContent = `Due Date: ${this.dueDate}`;
+
+        toDoItem.appendChild(toDoDescription);
+        toDoItem.appendChild(toDoPriority);
+        toDoItem.appendChild(toDoDueDate);
     };
 
     deleteToDoItem () {
@@ -39,12 +49,6 @@ function createProjectCard () {
     const projectbtnAdd = document.createElement('button');
     const projectbtndel = document.createElement('button');
     const toDosContainer = document.createElement('div');
-    const toDoItem = document.createElement('div');
-    const toDoDescription = document.createElement('p');
-    const toDoPriority = document.createElement('div');
-    const toDoPriorityIndicator = document.createElement('span');
-    const toDoDueDate = document.createElement('div');
-    const toDoDate = document.createElement('span');
     
     projectCard.classList.add('project-card');
     projectHeader.classList.add('project-header');
@@ -52,12 +56,6 @@ function createProjectCard () {
     projectbtnAdd.classList.add('project-btn', 'add');
     projectbtndel.classList.add('project-btn', 'del');
     toDosContainer.classList.add('to-dos');
-    toDoItem.classList.add('to-do');
-    toDoDescription.classList.add('metaItem', 'toDoDesc');
-    toDoPriority.classList.add('meta-item', 'toDoPriority');
-    toDoPriorityIndicator.classList.add('span-item', 'priority');
-    toDoDueDate.classList.add('span-item', 'toDoDueDate');
-    toDoDate.classList.add('span-item', 'dueDate');
 
     projectTitle.textContent = projectName;
     projectbtnAdd.textContent = 'Add To-do';
@@ -67,19 +65,41 @@ function createProjectCard () {
         projectCard.remove();
     });
 
+    projectbtnAdd.addEventListener('click', () => {
+        const todoAddModal = document.querySelector('.modal-container');
+        todoAddModal.classList.add('modal-container-opened');
+    });
+
     projectContainer.appendChild(projectCard);
     projectCard.appendChild(projectHeader);
     projectCard.appendChild(toDosContainer);
     projectHeader.appendChild(projectTitle);
     projectHeader.appendChild(projectbtnAdd);
     projectHeader.appendChild(projectbtndel);
-    toDosContainer.appendChild(toDoItem);
-    toDoItem.appendChild(toDoDescription);
-    toDoItem.appendChild(toDoPriority);
-    toDoItem.appendChild(toDoDueDate);
-    toDoPriority.appendChild(toDoPriorityIndicator);
-    toDoDueDate.appendChild(toDoDate);
+    // toDosContainer.appendChild(toDoItem);
+    // toDoItem.appendChild(toDoDescription);
+    // toDoItem.appendChild(toDoPriority);
+    // toDoItem.appendChild(toDoDueDate);
+    // toDoPriority.appendChild(toDoPriorityIndicator);
+    // toDoDueDate.appendChild(toDoDate);
 };
 
 export { createProjectCard };
+
+function addTodoTask () {
+    const saveTaskBtn = document.querySelector(".btn-save");
+
+    saveTaskBtn.addEventListener('click', () => {
+        const taskDescription = document.querySelector('#todo-desc').value;
+        const taskPriority = document.querySelector('#todo-priority').value;
+        const taskDeadline = document.querySelector('#todo-date').value;
+
+        const todoTask = new toDoItem(taskDescription, taskPriority, taskDeadline);
+
+        console.log(todoTask);
+
+    });
+}
+
+addTodoTask();
 

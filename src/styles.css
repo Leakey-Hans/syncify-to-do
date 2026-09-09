@@ -276,10 +276,18 @@
     max-width: 420px;
     padding: 30px;
     border: 2px solid #1a1a1a; 
-    box-shadow: 6px 6px 0px #1a1a1a; 
     position: absolute;
     top: 25%;
     left: 50%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease-out;
+}
+
+.modal-container-opened {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.4s ease-in;
 }
 
 .modal-title {

@@ -32,3 +32,13 @@ newProjectBtn.addEventListener("click", () => {
     addProjectModal.classList.add('project-modal-opened');
     newProjectBtn.disabled = true;
 });
+
+    //Todo modal remove
+
+const todoModalCancelBtn = document.querySelector('.btn-secondary');
+
+todoModalCancelBtn.addEventListener('click', () => {
+    const todoAddModalE2 = document.querySelector('.modal-container');
+    todoAddModalE2.classList.remove('modal-container-opened');
+    
+});
