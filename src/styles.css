@@ -217,7 +217,7 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 1px solid black;
+    border: 1px solid black;
 }
 
 
@@ -259,12 +259,14 @@
     opacity: 0;
     scale: 0.95;
     visibility: hidden;
+    transition: opacity 0.3s ease;
 }
 
 .project-modal-opened {
     opacity: 1;
     transform: none;
     visibility: visible;
+    transition: opacity 0.3s ease;
 }
 
 

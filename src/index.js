@@ -1,10 +1,37 @@
 import "./styles.css"
 import "./uiInteractions.js"
 
+
+class toDoItem {
+    constructor (description, priority, dueDate) {
+        this.description = description;
+        this.priority = priority;
+        this.dueDate = dueDate;
+    };
+
+    createTodo () {
+        const toDoItem = document.createElement('div');
+        const toDoDescription = document.createElement('p');
+        toDoDescription.textContent = this.description;
+        const toDoPriority = document.createElement('div');
+        const toDoPriorityIndicator = document.createElement('span');
+        const toDoDueDate = document.createElement('div');
+        const toDoDate = document.createElement('span');
+    };
+
+    deleteToDoItem () {
+
+    };
+
+    editToDoItem () {
+
+    };
+}
+
 function createProjectCard () {
 
     const projectContainer = document.querySelector('.project-section');
-    const projectName = document.querySelector('.project-name').value
+    const projectName = document.querySelector('.project-name').value;
 
     const projectCard = document.createElement('div');
     const projectHeader = document.createElement('div');
@@ -52,10 +79,6 @@ function createProjectCard () {
     toDoItem.appendChild(toDoDueDate);
     toDoPriority.appendChild(toDoPriorityIndicator);
     toDoDueDate.appendChild(toDoDate);
-
-    projectbtndel.addEventListener('click', () => {
-        projectCard.remove();
-    });
 };
 
 export { createProjectCard };
