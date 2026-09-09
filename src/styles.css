@@ -270,5 +270,93 @@
 }
 
 
+.modal-container {
+    background: #ffffff;
+    width: 100%;
+    max-width: 420px;
+    padding: 30px;
+    border: 2px solid #1a1a1a; 
+    box-shadow: 6px 6px 0px #1a1a1a; 
+    position: absolute;
+    top: 25%;
+    left: 50%;
+}
+
+.modal-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 24px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+    
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    font-size: 0.85rem;
+    display: block;
+    font-weight: 600;
+    color: #000000;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    color: #000000;
+    background-color: #ffffff;
+    border: 1.5px solid #1a1a1a;
+    outline: none;
+}
+
+.form-control:focus {
+    background-color: #f5f5f5;
+}
+
+textarea.form-control {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 28px;
+}
+
+.btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-transform: uppercase;
+    border: 1.5px solid #1a1a1a;
+    background: #ffffff;
+    color: #000000;
+}
+
+.btn:hover {
+    background: #1a1a1a;
+    color: #ffffff;
+}
+
+.btn-secondary {
+    border-color: transparent;
+}
+
+.btn-secondary:hover {
+    background: #f0f0f0;
+    color: #000000;
+}
+
+
+
 
 
