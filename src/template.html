@@ -45,6 +45,34 @@
                     <button type="button" class="add-project">Add Project</button>
             </form>
         </div>
+        <div class="modal-container">
+            <h2 class="modal-title">Create Task</h2>
+    
+            <form>
+                <div class="form-group">
+                    <label for="todo-desc">Task Description</label>
+                    <textarea id="todo-desc" class="form-control" placeholder="What needs to be done?" required></textarea>
+                </div>
+
+            <div class="form-group">
+                <label for="todo-priority">Priority</label>
+                    <select id="todo-priority" class="form-control" required>
+                        <option value="low">Low</option>
+                        <option value="medium">Medium</option>
+                        <option value="high">High</option>
+                    </select>
+            </div>
+            <div class="form-group">
+                <label for="todo-date">Due Date</label>
+                <input type="date" id="todo-date" class="form-control" required>
+            </div>
+
+            <div class="modal-actions">
+                <button type="button" class="btn btn-secondary">Cancel</button>
+                <button type="submit" class="btn">Save Task</button>
+            </div>
+        </form>
+    </div>
     </main>
 </body>
 </html>
