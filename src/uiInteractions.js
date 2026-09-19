@@ -1,6 +1,6 @@
 import { createProjectCard  } from "./index.js";
 
-//Sidebar list interactivity
+//Sidebar list items interactivity
 const sideBtns = document.querySelectorAll(".list-item");
 
 sideBtns.forEach(item => {
