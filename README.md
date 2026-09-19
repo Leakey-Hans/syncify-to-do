@@ -65,4 +65,4 @@ Then open the generated `index.html` in your browser.
 
 # Notes
 
-This project was built as part of a learning exercise on JavaScript, separating app logic from the DOM, and using the Web Storage API for persistence.
+This project was built as part of the Odin Project learning exercise on JavaScript, separating app logic from the DOM, and using the Web Storage API for persistence.
